@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10121d">
+  <meta name="description" content="A quiet, thoughtful three-card tarot reading for reflection. Choose your question, draw from the Major Arcana, and explore what Past, Present, and Future may invite you to consider.">
+  <title>The Quiet Arcana — a three-card reading</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="sky" aria-hidden="true"><span class="star star-one">✳</span><span class="star star-two">✦</span><span class="star star-three">✧</span><span class="star star-four">✳</span><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="The Quiet Arcana home"><span class="brand-mark" aria-hidden="true">✳</span><span>THE QUIET ARCANA</span></a>
+    <span class="header-note">A moment for your own wisdom</span>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow"><span></span> YOUR PERSONAL THREE-CARD READING <span></span></p>
+      <h1 id="page-title">Listen for the <em>in-between.</em></h1>
+      <p class="intro-copy">The cards don’t decide your future. They offer a lantern for the path you’re already making.</p>
+    </section>
+
+    <section class="reading-panel" aria-label="Tarot reading">
+      <div class="reading-controls">
+        <label for="topic">WHAT IS ON YOUR MIND?</label>
+        <div class="control-row">
+          <div class="select-wrap"><select id="topic" aria-label="Choose a reading topic">
+            <option value="general">A little direction</option>
+            <option value="love">Love &amp; connection</option>
+            <option value="career">Work &amp; purpose</option>
+            <option value="growth">Personal growth</option>
+          </select><span aria-hidden="true">⌄</span></div>
+          <button id="shuffle-button" class="button button-primary" type="button"><span aria-hidden="true">⟳</span> Shuffle the deck</button>
+        </div>
+        <p id="status" class="status" aria-live="polite">Choose a focus, then shuffle to begin.</p>
+      </div>
+
+      <div id="reading-area" class="reading-area" aria-live="polite">
+        <div class="empty-state" id="empty-state">
+          <div class="empty-orbit" aria-hidden="true"><span>✦</span><i>✧</i></div>
+          <p>Your reading is waiting to be drawn.</p>
+          <span>Take a breath. Hold your question gently.</span>
+        </div>
+        <div id="selection-area" class="selection-area" hidden>
+          <div class="selection-heading"><span>THE DECK</span><p>Choose <strong id="remaining-count">three</strong> cards that call to you.</p></div>
+          <div id="deck" class="deck" aria-label="Shuffled tarot deck"></div>
+        </div>
+        <div id="spread" class="spread" hidden aria-label="Your three-card spread"></div>
+      </div>
+
+      <section id="fortune" class="fortune" hidden aria-labelledby="fortune-title">
+        <div class="fortune-rule"><span>✦</span></div>
+        <p class="eyebrow">A THREAD THROUGH YOUR READING</p>
+        <h2 id="fortune-title">The story between the cards</h2>
+        <p id="fortune-text" class="fortune-text"></p>
+        <p class="reflection-note"><span aria-hidden="true">☾</span> Keep what resonates; leave the rest. The choice, as ever, is yours.</p>
+      </section>
+
+      <div class="restart-row"><button id="restart-button" class="button button-quiet" type="button" hidden>↻ &nbsp; Begin a new reading</button></div>
+    </section>
+
+    <p class="disclaimer">Tarot is a tool for reflection, not a promise of what’s to come.</p>
+  </main>
+  <footer><span>MADE FOR THE MOMENT YOU’RE IN</span><span aria-hidden="true">✦</span><span>THE QUIET ARCANA</span></footer>
+</body>
+</html>
